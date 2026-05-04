@@ -1,3 +1,5 @@
+import { getNetwork, getBestTarget, HOME_RESERVED_RAM } from "./lib/network.js";
+
 /** @param {NS} ns */
 export async function main(ns) {
   ns.disableLog("ALL"); // Keeps the default console clean
@@ -53,16 +55,20 @@ export async function main(ns) {
 
       let availRam = ns.getServerMaxRam(server) - ns.getServerUsedRam(server);
 
-      // Reserve 32GB on home so you can still play the game
+      // Reserve RAM on home so you can still play the game
       if (server === "home") {
-        availRam = Math.max(0, availRam - 32);
+        availRam = Math.max(0, availRam - HOME_RESERVED_RAM);
       }
 
       let threads = Math.floor(availRam / scriptRam);
 
       if (threads > 0) {
-        ns.exec(action, server, threads, target);
-        totalThreads += threads;
+        let pid = ns.exec(action, server, threads, target);
+        if (pid === 0) {
+          ns.print(`WARN: Failed to exec ${action} on ${server} (${threads} threads)`);
+        } else {
+          totalThreads += threads;
+        }
       }
     }
 
@@ -87,64 +93,4 @@ export async function main(ns) {
       await ns.sleep(delay + 50);
     }
   }
-}
-
-/** @param {NS} ns */
-function getNetwork(ns) {
-  let servers = ["home"];
-  for (let i = 0; i < servers.length; i++) {
-    let neighbors = ns.scan(servers[i]);
-    for (let neighbor of neighbors) {
-      if (!servers.includes(neighbor)) servers.push(neighbor);
-    }
-  }
-
-  let purchased = ns.cloud.getServerNames();
-  for (let p of purchased) {
-    if (!servers.includes(p)) servers.push(p);
-  }
-
-  // Auto-Nuke during scan
-  for (let server of servers) {
-    if (server !== "home" && !ns.hasRootAccess(server)) {
-      let ports = 0;
-      if (ns.fileExists("BruteSSH.exe", "home")) { ns.brutessh(server); ports++; }
-      if (ns.fileExists("FTPCrack.exe", "home")) { ns.ftpcrack(server); ports++; }
-      if (ns.fileExists("relaySMTP.exe", "home")) { ns.relaysmtp(server); ports++; }
-      if (ns.fileExists("HTTPWorm.exe", "home")) { ns.httpworm(server); ports++; }
-      if (ns.fileExists("SQLInject.exe", "home")) { ns.sqlinject(server); ports++; }
-
-      if (ns.getServerNumPortsRequired(server) <= ports) {
-        ns.nuke(server);
-      }
-    }
-  }
-  return servers;
-}
-
-/** @param {NS} ns */
-function getBestTarget(ns, servers) {
-  let bestTarget = null;
-  let bestScore = -1;
-  const playerHackLevel = ns.getHackingLevel();
-
-  for (let server of servers) {
-    // Skip un-nuked servers, empty servers, and your own computer
-    if (!ns.hasRootAccess(server) || ns.getServerMaxMoney(server) === 0 || server === "home") continue;
-
-    let reqHackLevel = ns.getServerRequiredHackingLevel(server);
-
-    if (reqHackLevel <= playerHackLevel / 2) {
-      let maxMoney = ns.getServerMaxMoney(server);
-      let minSec = Math.max(1, ns.getServerMinSecurityLevel(server));
-      let growth = server === "n00dles" ? 1 : ns.getServerGrowth(server);
-
-      let score = (maxMoney * growth) / minSec;
-      if (score > bestScore) {
-        bestScore = score;
-        bestTarget = server;
-      }
-    }
-  }
-  return bestTarget;
 }

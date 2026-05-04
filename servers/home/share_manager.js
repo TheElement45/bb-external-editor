@@ -1,10 +1,11 @@
+import { getNetworkSimple, HOME_RESERVED_RAM } from "./lib/network.js";
+
 /** @param {NS} ns */
 export async function main(ns) {
   ns.disableLog("ALL");
   ns.tail();
 
   const WORKER = "cmd_share.js";
-  const HOME_RESERVED_RAM = 64;
 
   // Dynamically generate the share worker
   ns.write(
@@ -16,7 +17,7 @@ export async function main(ns) {
   ns.print("Starting Share Manager...");
 
   while (true) {
-    let servers = getNetwork(ns);
+    let servers = getNetworkSimple(ns);
     let totalThreads = 0;
 
     for (let server of servers) {
@@ -35,12 +36,14 @@ export async function main(ns) {
         if (server !== "home") {
           await ns.scp(WORKER, server, "home");
         }
-        
-        // Use threads as an argument just to ensure uniqueness if we want to run multiple sizes,
-        // though normally it's easier to just run it without args and let it loop.
+
         // We add a unique ID (Date.now()) so we can spawn multiple instances if more RAM frees up later.
-        ns.exec(WORKER, server, threads, Date.now());
-        totalThreads += threads;
+        let pid = ns.exec(WORKER, server, threads, Date.now());
+        if (pid === 0) {
+          ns.print(`WARN: Failed to exec ${WORKER} on ${server} (${threads} threads)`);
+        } else {
+          totalThreads += threads;
+        }
       }
     }
 
@@ -52,22 +55,4 @@ export async function main(ns) {
     // Sleep for 10 seconds (the duration of a share pulse) and check if new RAM freed up
     await ns.sleep(10000);
   }
-}
-
-/** @param {NS} ns */
-function getNetwork(ns) {
-  let servers = ["home"];
-  for (let i = 0; i < servers.length; i++) {
-    let neighbors = ns.scan(servers[i]);
-    for (let neighbor of neighbors) {
-      if (!servers.includes(neighbor)) servers.push(neighbor);
-    }
-  }
-
-  let purchased = ns.cloud.getServerNames();
-  for (let p of purchased) {
-    if (!servers.includes(p)) servers.push(p);
-  }
-
-  return servers;
 }

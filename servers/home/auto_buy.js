@@ -14,7 +14,6 @@ export async function main(ns) {
     ns.disableLog("getServerMaxRam");
 
     ns.print(`--- Auto-Buyer Started ---`);
-    // FIX: Changed to ns.formatRam()
     ns.print(`Targeting Max RAM: ${ns.format.ram(maxRam)} per server.`);
 
     while (true) {
@@ -34,7 +33,6 @@ export async function main(ns) {
             if (ns.cloud.getServerCost(targetRam) <= budget) {
                 let hostname = ns.cloud.purchaseServer("pserv", targetRam);
                 if (hostname !== "") {
-                    // FIX: Changed to ns.formatRam()
                     ns.print(`[+] Bought new server: ${hostname} (${ns.format.ram(targetRam)})`);
                 }
             }
