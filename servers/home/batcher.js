@@ -14,6 +14,7 @@ export async function main(ns) { if (ns.args[1] > 0) await ns.sleep(ns.args[1]);
   }
   let batchId = 0;
   const SPACER = 50;
+  const HOME_RESERVED_RAM = 64; // Increased to ensure auto_buy.js and other scripts have enough space
   while (true) {
     let servers = getNetwork(ns);
     let target = getBestTarget(ns, servers);
@@ -38,7 +39,7 @@ export async function main(ns) { if (ns.args[1] > 0) await ns.sleep(ns.args[1]);
       for (let s of servers) {
         if (!ns.hasRootAccess(s)) continue;
         let avail = ns.getServerMaxRam(s) - ns.getServerUsedRam(s);
-        if (s === "home") avail = Math.max(0, avail - 32);
+        if (s === "home") avail = Math.max(0, avail - HOME_RESERVED_RAM);
         let t = Math.floor(avail / scriptRam);
         if (t > 0) {
           if (s !== "home") await ns.scp(workers, s, "home");
@@ -84,7 +85,7 @@ export async function main(ns) { if (ns.args[1] > 0) await ns.sleep(ns.args[1]);
     for (let s of servers) {
       if (!ns.hasRootAccess(s)) continue;
       let avail = ns.getServerMaxRam(s) - ns.getServerUsedRam(s);
-      if (s === "home") avail = Math.max(0, avail - 32);
+      if (s === "home") avail = Math.max(0, avail - HOME_RESERVED_RAM);
       freeNetworkRam += avail;
     }
     if (freeNetworkRam < batchRam) {
@@ -110,7 +111,7 @@ export async function main(ns) { if (ns.args[1] > 0) await ns.sleep(ns.args[1]);
         if (remainingThreads <= 0) break;
         if (!ns.hasRootAccess(s)) continue;
         let avail = ns.getServerMaxRam(s) - ns.getServerUsedRam(s);
-        if (s === "home") avail = Math.max(0, avail - 32);
+        if (s === "home") avail = Math.max(0, avail - HOME_RESERVED_RAM);
         let capableT = Math.floor(avail / ns.getScriptRam(task.script));
         if (capableT > 0) {
           let launchT = Math.min(capableT, remainingThreads);
