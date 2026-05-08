@@ -19,7 +19,25 @@ export async function main(ns) {
   let batchId = 0;
   const SPACER = 50;
 
+  const PROGRAMS = [
+    "BruteSSH.exe",
+    "FTPCrack.exe",
+    "relaySMTP.exe",
+    "HTTPWorm.exe",
+    "SQLInject.exe"
+  ];
+
   while (true) {
+    // Auto-buy Tor and cracking programs using Singularity API
+    try {
+      ns.singularity.purchaseTor();
+      for (let prog of PROGRAMS) {
+        if (!ns.fileExists(prog, "home")) {
+          ns.singularity.purchaseProgram(prog);
+        }
+      }
+    } catch (e) {}
+
     let servers = getNetwork(ns);
     let target = getBestTarget(ns, servers);
     if (!target) {

@@ -1,0 +1,69 @@
+├╴foodnstuff (1) [backdoor]  ............................... Money:  $50.0m /  $50.0m Sec:   3/3   RAM:   16GB (98.4% used)
+├╴harakiri-sushi (40) [backdoor] @ ......................... Money: $100.0m / $100.0m Sec:   5/5   RAM:   16GB (98.4% used)
+├╴hong-fang-tea (30) [backdoor]  ........................... Money:  $75.0m /  $75.0m Sec:  11/5   RAM:   16GB (98.4% used)
+├╴joesguns (10) [backdoor] @ ............................... Money:  $62.5m /  $62.5m Sec:   5/5   RAM:   16GB (98.4% used)
+├╴sigma-cosmetics (5) [backdoor]  .......................... Money:  $57.5m /  $57.5m Sec:  14/3   RAM:   16GB (98.4% used)
+├╴iron-gym (100) [backdoor]  ............................... Money:  $20.0m / $500.0m Sec:  30/10  RAM:   32GB (98.4% used)
+│ └╴zer0 (75) [backdoor]  .................................. Money:   $7.5m / $187.5m Sec:  25/8   RAM:   32GB (0% used)
+│   └╴phantasy (100) [backdoor]  ........................... Money: $600.0m / $600.0m Sec:  21/7   RAM:   32GB (0% used)
+└╴n00dles (1) [backdoor]  .................................. Money:   $1.8m /   $1.8m Sec:   1/1   RAM:    4GB (87.5% used)
+  ├╴CSEC (51) [backdoor]  .................................. Money:    $0.0           Sec:   1/1   RAM:    8GB (0% used)
+  │ └╴silver-helix (150) [backdoor]  ....................... Money:  $45.0m /   $1.1b Sec:  30/10  RAM:   64GB (0% used)
+  │   ├╴computek (370) [backdoor]  ......................... Money:   $5.8b /   $5.8b Sec:  19/19  RAM:    0GB
+  │   │ └╴I.I.I.I (363)  ................................... Money:    $0.0           Sec:   1/1   RAM:  256GB (0% used)
+  │   ├╴netlink (420) [backdoor]  .......................... Money: $275.0m /   $6.9b Sec:  73/24  RAM:   16GB (0% used)
+  │   │ └╴catalyst (437) [backdoor]  ....................... Money:   $1.8b /  $12.6b Sec:  23/23  RAM:   32GB (0% used)
+  │   └╴crush-fitness (237) [backdoor]  .................... Money:  $47.6m /   $1.2b Sec:  44/15  RAM:    0GB
+  │     ├╴zb-institute (758) [backdoor]  ................... Money: $944.2m /  $23.6b Sec:  75/25  RAM:   16GB (0% used)
+  │     └╴rothman-uni (424) [backdoor]  .................... Money: $186.1m /   $4.7b Sec:  51/17  RAM:  128GB (0% used)
+  │       └╴aevum-police (400) [backdoor]  ................. Money: $346.0m /   $8.7b Sec:  80/27  RAM:   64GB (0% used)
+  ├╴nectar-net (20) [backdoor]  ............................ Money:  $68.8m /  $68.8m Sec:   7/7   RAM:   16GB (0% used)
+  │ └╴omega-net (199) [backdoor]  .......................... Money:  $60.1m /   $1.5b Sec:  33/11  RAM:   32GB (0% used)
+  │   ├╴avmnite-02h (209)  ................................. Money:    $0.0           Sec:   1/1   RAM:   32GB (0% used)
+  │   └╴johnson-ortho (266) [backdoor]  .................... Money:  $71.9m /   $1.8b Sec:  52/17  RAM:    0GB
+  │     └╴syscore (564) [backdoor]  ........................ Money: $596.0m /  $14.9b Sec:  73/24  RAM:    0GB
+  │       ├╴millenium-fitness (520) [backdoor]  ............ Money: $250.0m /   $6.3b Sec:  53/18  RAM:   64GB (0% used)
+  │       │ └╴snap-fitness (698) [backdoor]  ............... Money: $450.0m /  $11.3b Sec:  53/18  RAM:    0GB
+  │       └╴alpha-ent (575) [backdoor]  .................... Money: $604.8m /  $15.1b Sec:  69/23  RAM:   16GB (0% used)
+  │         └╴galactic-cyber (840) [backdoor]  ............. Money: $837.6m /  $20.9b Sec:  56/19  RAM:    0GB
+  │           └╴omnia (875)  ............................... Money: $930.5m /  $23.3b Sec:  86/29  RAM:   32GB (0% used)
+  │             └╴icarus (917) @@ .......................... Money: $941.9m /  $23.5b Sec:  90/30  RAM:    0GB
+  │               └╴nova-med (793) [backdoor]  ............. Money:   $1.1b /  $28.7b Sec:  77/26  RAM:    0GB
+  │                 └╴titan-labs (822) [backdoor]  ......... Money: $802.3m /  $20.1b Sec:  70/23  RAM:   32GB (0% used)
+  └╴max-hardware (80) [backdoor]  .......................... Money:  $10.0m / $250.0m Sec:  15/5   RAM:   32GB (0% used)
+    └╴neo-net (50) [backdoor]  ............................. Money:   $5.0m / $125.0m Sec:  25/8   RAM:   32GB (0% used)
+      └╴the-hub (298) [backdoor]  .......................... Money:   $4.2b /   $4.2b Sec:  46/15  RAM:   64GB (0% used)
+        └╴summit-uni (456) [backdoor] @ .................... Money:   $1.3b /   $8.6b Sec:  21/21  RAM:   64GB (0% used)
+          ├╴rho-construction (520) [backdoor]  ............. Money:   $2.2b /  $15.6b Sec:  17/17  RAM:   16GB (0% used)
+          │ └╴global-pharm (836) [backdoor]  ............... Money:   $1.7b /  $42.1b Sec:  81/27  RAM:   32GB (0% used)
+          │   └╴deltaone (854)  ............................ Money:   $1.4b /  $35.9b Sec:  83/28  RAM:    0GB
+          │     └╴defcomm (950) @ .......................... Money: $820.5m /  $20.5b Sec:  85/28  RAM:    0GB
+          └╴lexo-corp (698) [backdoor]  .................... Money: $744.3m /  $18.6b Sec:  63/21  RAM:  128GB (0% used)
+            └╴aerocorp (860)  .............................. Money:   $1.1b /  $27.4b Sec:  87/29  RAM:    0GB
+              └╴unitalife (806) [backdoor] @ ............... Money:   $1.0b /  $25.6b Sec:  77/26  RAM:   32GB (0% used)
+                ├╴zeus-med (840) [backdoor]  ............... Money:   $1.5b /  $37.1b Sec:  70/23  RAM:    0GB
+                ├╴univ-energy (830) [backdoor]  ............ Money:   $1.1b /  $27.6b Sec:  89/30  RAM:   16GB (0% used)
+                │ └╴taiyang-digital (857)  ................. Money: $891.8m /  $22.3b Sec:  78/26  RAM:    0GB
+                └╴solaris (816) [backdoor]  ................ Money: $809.9m /  $20.2b Sec:  72/24  RAM:   32GB (0% used)
+                  ├╴zb-def (825) [backdoor]  ............... Money: $943.3m /  $23.6b Sec:  60/20  RAM:    0GB
+                  │ └╴applied-energetics (800) [backdoor]  . Money: $968.3m /  $24.2b Sec:  75/25  RAM:    0GB
+                  │   ├╴vitalife (788) [backdoor] @ ........ Money: $768.9m /  $19.2b Sec:  81/27  RAM:   64GB (0% used)
+                  │   └╴stormtech (1066)  .................. Money:   $1.2b /  $29.6b Sec:  86/29  RAM:    0GB
+                  │     ├╴. (510) [backdoor] @ ............. Money:    $0.0           Sec:   1/1   RAM:   16GB (0% used)
+                  │     └╴4sigma (927) @ ................... Money:  $15.2b / $379.0b Sec:  68/23  RAM:    0GB
+                  └╴infocomm (887) @ ....................... Money: $652.5m /  $16.3b Sec:  90/30  RAM:    0GB
+                    ├╴microdyne (821) [backdoor]  .......... Money: $675.9m /  $16.9b Sec:  73/24  RAM:   16GB (0% used)
+                    └╴run4theh111z (520) @ ................. Money:    $0.0           Sec:   1/1   RAM:   64GB (0% used)
+                      ├╴fulcrumtech (1196)  ................ Money:   $1.5b /  $36.9b Sec:  90/30  RAM:  256GB (0% used)
+                      │ └╴kuai-gong (997)  ................. Money:  $20.0b / $500.9b Sec:  97/32  RAM:    0GB
+                      │   ├╴b-and-a (1112) @@ .............. Money:  $20.4b / $510.3b Sec:  76/25  RAM:    0GB
+                      │   ├╴clarkinc (1070)  ............... Money:  $24.5b / $612.5b Sec:  48/16  RAM:    0GB
+                      │   │ └╴fulcrumassets (1578)  ........ Money:   $1.0m /  $25.0m Sec:  99/33  RAM:    0GB
+                      │   └╴powerhouse-fitness (963)  ...... Money: $900.0m /  $22.5b Sec:  57/19  RAM:   32GB (0% used)
+                      │     └╴ecorp (1210) @ ............... Money:  $33.1b / $828.6b Sec:  99/33  RAM:    0GB
+                      └╴helios (839) [backdoor]  ........... Money: $709.1m /  $17.7b Sec:  90/30  RAM:  128GB (0% used)
+                        └╴omnitek (1009)  .................. Money:  $14.5b / $361.5b Sec:  91/30  RAM:  256GB (0% used)
+                          ├╴blade (952)  ................... Money:  $39.6b / $989.5b Sec:  93/31  RAM:   32GB (0% used)
+                          └╴nwo (1087)  .................... Money:  $21.3b / $531.7b Sec:  99/33  RAM:    0GB
+                            ├╴megacorp (1341)  ............. Money:  $58.4b /   $1.5t Sec:  99/33  RAM:    0GB
+                            └╴The-Cave (925)  .............. Money:    $0.0           Sec:   1/1   RAM:    0GB

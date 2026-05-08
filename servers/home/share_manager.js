@@ -3,7 +3,7 @@ import { getNetworkSimple, HOME_RESERVED_RAM } from "./lib/network.js";
 /** @param {NS} ns */
 export async function main(ns) {
   ns.disableLog("ALL");
-  ns.tail();
+  ns.ui.openTail();
 
   const WORKER = "cmd_share.js";
 
